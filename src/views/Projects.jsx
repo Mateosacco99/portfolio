@@ -12,11 +12,11 @@ const Projects = () => {
       link: 'https://mateosacco99.github.io/cotizador-gestion/',
     },
     {
-      title: 'Rent Insurance Calculator',
+      title: 'Portfolio Website',
       description:
-        'A responsive web application that calculates rent insurance costs in real time, allowing users to preview coverage and pricing instantly.',
-      technologies: ['React', 'Vite', 'SASS'],
-      image: '/cotizador-gestion.png',
+        'A modern portfolio website showcasing projects, skills, and professional experience.',
+      technologies: ['React', 'Tailwind'],
+      image: '/portfolio.png',
       link: 'https://mateosacco99.github.io/cotizador-gestion/',
     },
     {
