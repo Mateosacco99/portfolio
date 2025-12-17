@@ -86,7 +86,12 @@ const Projects = () => {
                 variant="outline"
                 size="sm"
                 fullWidth
-                onClick={() => window.location.href = project.link}
+                onClick={() => {
+                  // For external project links, open in new tab
+                  if (project.link && project.link !== '#') {
+                    window.open(project.link, '_blank', 'noopener,noreferrer');
+                  }
+                }}
               >
                 View Project
               </Button>

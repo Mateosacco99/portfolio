@@ -13,6 +13,7 @@ const Contact = () => {
   });
   
   const [errors, setErrors] = useState({});
+  const [submitStatus, setSubmitStatus] = useState(null); // 'success' | 'error' | null
   
   const handleChange = (e) => {
     const { id, value } = e.target;
@@ -64,16 +65,19 @@ const Contact = () => {
     }
     
     // Handle form submission (e.g., send to backend)
-    console.log('Form submitted:', formData);
-    alert('Thank you for your message! I will get back to you soon.');
+    // For now, just show success message
+    setSubmitStatus('success');
     
-    // Reset form
-    setFormData({
-      name: '',
-      email: '',
-      subject: '',
-      message: '',
-    });
+    // Reset form after 2 seconds
+    setTimeout(() => {
+      setFormData({
+        name: '',
+        email: '',
+        subject: '',
+        message: '',
+      });
+      setSubmitStatus(null);
+    }, 2000);
   };
   
   return (
@@ -89,6 +93,12 @@ const Contact = () => {
         </div>
         
         <div className="max-w-2xl mx-auto">
+          {submitStatus === 'success' && (
+            <div className="mb-6 p-4 bg-green-100 border border-green-400 text-green-700 rounded-lg">
+              Thank you for your message! I will get back to you soon.
+            </div>
+          )}
+          
           <form onSubmit={handleSubmit} className="space-y-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <Input
