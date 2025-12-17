@@ -41,18 +41,6 @@ const About = () => {
             </Card>
             <Card hoverable>
               <div className="text-center">
-                <div className="text-4xl font-bold text-primary-600 mb-2">50+</div>
-                <div className="text-gray-600">Projects Completed</div>
-              </div>
-            </Card>
-            <Card hoverable>
-              <div className="text-center">
-                <div className="text-4xl font-bold text-primary-600 mb-2">30+</div>
-                <div className="text-gray-600">Happy Clients</div>
-              </div>
-            </Card>
-            <Card hoverable>
-              <div className="text-center">
                 <div className="text-4xl font-bold text-primary-600 mb-2">15+</div>
                 <div className="text-gray-600">Technologies</div>
               </div>
