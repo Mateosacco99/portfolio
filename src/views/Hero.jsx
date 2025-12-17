@@ -20,10 +20,14 @@ const Hero = () => {
             using the latest technologies.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button variant="primary" size="lg" onClick={() => window.location.href = '#contact'}>
+            <Button variant="primary" size="lg" onClick={() => {
+              document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+            }}>
               Get In Touch
             </Button>
-            <Button variant="outline" size="lg" onClick={() => window.location.href = '#projects'}>
+            <Button variant="outline" size="lg" onClick={() => {
+              document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' });
+            }}>
               View My Work
             </Button>
           </div>
