@@ -10,7 +10,7 @@ const Hero = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 mb-6">
-            Hi, I'm <span className="text-primary-600">Your Name</span>
+            Hi, I'm <span className="text-primary-600">Mateo</span>
           </h1>
           <p className="text-xl sm:text-2xl text-gray-700 mb-8 max-w-3xl mx-auto">
             A passionate developer creating amazing web experiences
