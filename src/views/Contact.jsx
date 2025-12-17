@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Input, Textarea, Button } from '../components';
+import { FaPhone, FaEnvelope, FaMapPin } from 'react-icons/fa';
 
 /**
  * Contact Section Component
@@ -104,7 +105,7 @@ const Contact = () => {
               <Input
                 id="name"
                 label="Name"
-                placeholder="Your name"
+                placeholder="Mateo Sacco"
                 value={formData.name}
                 onChange={handleChange}
                 error={errors.name}
@@ -150,19 +151,25 @@ const Contact = () => {
           
           <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
             <div>
-              <div className="text-3xl mb-2">📧</div>
+              <div className="flex justify-center">
+                <div className="text-3xl mb-2 text-primary-600"><FaEnvelope /></div>
+              </div>
               <h4 className="font-semibold text-gray-900 mb-1">Email</h4>
-              <p className="text-gray-600">your.email@example.com</p>
+              <p className="text-gray-600">mateosacco99@gmail.com</p>
             </div>
             <div>
-              <div className="text-3xl mb-2">📱</div>
+              <div className="flex justify-center">
+                <div className="text-3xl mb-2 text-primary-600"><FaPhone /></div>
+              </div>
               <h4 className="font-semibold text-gray-900 mb-1">Phone</h4>
-              <p className="text-gray-600">+1 (555) 123-4567</p>
+              <p className="text-gray-600">+54 11 6855-5892</p>
             </div>
             <div>
-              <div className="text-3xl mb-2">📍</div>
+              <div className="flex justify-center">
+                <div className="text-3xl mb-2 text-primary-600"><FaMapPin /></div>
+              </div>
               <h4 className="font-semibold text-gray-900 mb-1">Location</h4>
-              <p className="text-gray-600">Your City, Country</p>
+              <p className="text-gray-600">Buenos Aires, Argentina</p>
             </div>
           </div>
         </div>

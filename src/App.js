@@ -1,13 +1,12 @@
 import React from 'react';
 import { Navbar, Footer } from './components';
-import { Hero, About, Projects, Skills, Contact } from './views';
+import { Hero, About, Projects, Contact } from './views';
 
 function App() {
   const navLinks = [
     { label: 'Home', href: '#home' },
     { label: 'About', href: '#about' },
     { label: 'Projects', href: '#projects' },
-    { label: 'Skills', href: '#skills' },
     { label: 'Contact', href: '#contact' },
   ];
   
@@ -56,12 +55,11 @@ function App() {
         </div>
         <About />
         <Projects />
-        <Skills />
         <Contact />
       </main>
       
       <Footer
-        copyright="© 2024 Your Name. All rights reserved."
+        copyright="© 2025 Mateo Sacco. All rights reserved."
         links={footerLinks}
         socialLinks={socialLinks}
       />
