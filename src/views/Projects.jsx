@@ -1,9 +1,6 @@
 import React from 'react';
 import { Card, Button } from '../components';
 
-/**
- * Projects Section Component
- */
 const Projects = () => {
   const projects = [
     {
