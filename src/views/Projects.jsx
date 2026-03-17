@@ -25,7 +25,7 @@ const Projects = () => {
         'A web application that allows the user to place an order for automotive parts and accessories.',
       technologies: ['React', 'Vite', 'SASS', 'Firebase'],
       image: '/ecommerce-autoequipe.png',
-      link: 'https://cotizador-gestion.vercel.app/',
+      link: 'https://ecommerce-autoequipe.vercel.app/',
     },
   ];
 
