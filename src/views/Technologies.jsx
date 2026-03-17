@@ -3,9 +3,11 @@ import { FaJava, FaSass } from 'react-icons/fa';
 import { GrOracle } from 'react-icons/gr';
 import { DiDjango } from 'react-icons/di';
 import { SiPostman, SiVite, SiVercel } from 'react-icons/si';
+import { useLanguage } from '../i18n/LanguageContext';
 
 
 const Technologies = () => {
+  const { t } = useLanguage();
   const technologies = [
     { name: 'JavaScript', icon: SiJavascript, color: 'text-yellow-400' },
     { name: 'React', icon: SiReact, color: 'text-blue-400' },
@@ -29,7 +31,7 @@ const Technologies = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-            Technologies & Tools
+            {t('hero.techStack')}
           </h2>
         </div>
 

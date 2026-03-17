@@ -1,28 +1,26 @@
-import React from 'react';
 import { Card, Button } from '../components';
+import { useLanguage } from '../i18n/LanguageContext';
 
 const Projects = () => {
+  const { t } = useLanguage();
   const projects = [
     {
       title: 'AutoEquipe E-commerce',
-      description:
-        'A web application that allows the user to place an order for automotive parts and accessories.',
+      description: t('projects.aeDesc'),
       technologies: ['React', 'Vite', 'SASS', 'Firebase'],
       image: '/ecommerce-autoequipe.png',
       link: 'https://ecommerce-autoequipe.vercel.app/',
     },
     {
       title: 'Rent Insurance Calculator',
-      description:
-        'A responsive web application that calculates rent insurance.',
+      description: t('projects.calcDesc'),
       technologies: ['React', 'Vite', 'SASS'],
       image: '/cotizador-gestion.png',
       link: 'https://cotizador-gestion.vercel.app/',
     },
     {
       title: 'Portfolio Website',
-      description:
-        'A modern portfolio website showcasing projects, skills, and professional experience.',
+      description: t('projects.portfolioDesc'),
       technologies: ['React', 'Tailwind'],
       image: '/portfolio.png',
       link: 'https://mateo-sacco.vercel.app/',
@@ -41,10 +39,10 @@ const Projects = () => {
         {/* Header */}
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-            My Projects
+            {t('projects.title')}
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Here are some of my recent projects that showcase my skills and experience
+            {t('projects.subtitle')}
           </p>
         </div>
 
@@ -78,7 +76,7 @@ const Projects = () => {
                     {/* Hover overlay */}
                     <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
                       <span className="px-4 py-2 bg-white text-gray-900 text-sm font-medium rounded-md">
-                        Live Demo →
+                        {t('projects.liveDemo')} →
                       </span>
                     </div>
                   </div>
@@ -118,7 +116,7 @@ const Projects = () => {
                   openProject(project.link);
                 }}
               >
-                Live Demo
+                {t('projects.liveDemo')}
               </Button>
             </Card>
           ))}

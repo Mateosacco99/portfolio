@@ -10,6 +10,7 @@ export const translations = {
     hero: {
       greeting: "Hi, I'm",
       specialization: 'I specialize in building modern, responsive, and user-friendly applications using the latest technologies.',
+      techStack: "Technologies & Tools",
       buttons: {
         getInTouch: 'Get In Touch',
         viewWork: 'View My Work',
@@ -22,14 +23,26 @@ export const translations = {
       experience: 'Years Experience',
       technologies: 'Technologies',
     },
+    projects: {
+      title: 'My Projects',
+      subtitle: 'Here are some of my recent projects',
+      aeDesc: 'A web application that allows the user to place an order for automotive parts and accessories.',
+      calcDesc: 'A responsive web application that calculates rent insurance.',
+      portfolioDesc: 'A modern portfolio website showcasing projects, skills, and professional experience.',
+      liveDemo: 'View Live Demo',
+    },
     contact: {
       title: 'Get In Touch',
       subtitle: 'Have a question or want to work together? Feel free to reach out!',
       form: {
         name: 'Name',
+        namePlaceholder: 'Your Name',
         email: 'Email',
+        emailPlaceholder: 'Your Email',
         subject: 'Subject',
+        subjectPlaceholder: 'Subject...',
         message: 'Message',
+        messagePlaceholder: 'Your message here...',
         send: 'Send Message',
         sending: 'Sending...',
       },
@@ -55,6 +68,7 @@ export const translations = {
     hero: {
       greeting: 'Hola, soy',
       specialization: 'Me especializo en construir aplicaciones modernas, responsivas y amigables con el usuario utilizando las últimas tecnologías.',
+      techStack: 'Tecnologías y Herramientas',
       buttons: {
         getInTouch: 'Contáctame',
         viewWork: 'Mis Proyectos',
@@ -67,14 +81,26 @@ export const translations = {
       experience: 'Años de Experiencia',
       technologies: 'Tecnologías',
     },
+    projects: {
+      title: 'Mis Proyectos',
+      subtitle: 'Aquí están algunos de mis proyectos recientes',
+      aeDesc: 'Una aplicación web que permite realizar un pedido de neumáticos para vehículos.',
+      calcDesc: 'Una aplicación web responsive que calcula seguros de caución.',
+      portfolioDesc: 'Portafolio que destaca proyectos, habilidades y experiencia profesional.',
+      liveDemo: 'Ver Demo',
+    },
     contact: {
       title: 'Contáctame',
-      subtitle: '¿Tienes una pregunta o quieres trabajar juntos? ¡No dudes en comunicarte!',
+      subtitle: '¿Tienes una pregunta o queres trabajar juntos? No dudes en contactarme!',
       form: {
         name: 'Nombre',
+        namePlaceholder: 'Tu Nombre',
         email: 'Correo Electrónico',
+        emailPlaceholder: 'Tu Correo Electrónico',
         subject: 'Asunto',
+        subjectPlaceholder: 'Asunto...',
         message: 'Mensaje',
+        messagePlaceholder: 'Tu mensaje aquí...',
         send: 'Enviar Mensaje',
         sending: 'Enviando...',
       },

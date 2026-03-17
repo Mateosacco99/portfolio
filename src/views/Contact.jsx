@@ -2,8 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { Input, Textarea, Button } from '../components';
 import { FaPhone, FaEnvelope, FaMapPin } from 'react-icons/fa';
 import emailjs from 'emailjs-com';
+import { useLanguage } from '../i18n/LanguageContext';
 
 const Contact = () => {
+  const { t } = useLanguage();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -112,23 +114,23 @@ const Contact = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-            Get In Touch
+            {t('contact.title')}
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Have a question or want to work together? Feel free to reach out!
+            {t('contact.subtitle')}
           </p>
         </div>
         
         <div className="max-w-2xl mx-auto">
           {submitStatus === 'success' && (
             <div className="mb-6 p-4 bg-green-100 border border-green-400 text-green-700 rounded-lg">
-              Thank you for your message! I will get back to you soon.
+              {t('contact.form.successMessage')}
             </div>
           )}
           
           {submitStatus === 'error' && (
             <div className="mb-6 p-4 bg-red-100 border border-red-400 text-red-700 rounded-lg">
-              Failed to send message. Please try again later.
+              {t('contact.form.errorMessage')}
             </div>
           )}
           
@@ -136,8 +138,8 @@ const Contact = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <Input
                 id="name"
-                label="Name"
-                placeholder="Your Name"
+                label={t('contact.form.name')}
+                placeholder={t('contact.form.namePlaceholder')}
                 value={formData.name}
                 onChange={handleChange}
                 error={errors.name}
@@ -146,8 +148,8 @@ const Contact = () => {
               <Input
                 id="email"
                 type="email"
-                label="Email"
-                placeholder="your.email@example.com"
+                label={t('contact.form.email')}
+                placeholder={t('contact.form.emailPlaceholder')}
                 value={formData.email}
                 onChange={handleChange}
                 error={errors.email}
@@ -157,8 +159,8 @@ const Contact = () => {
             
             <Input
               id="subject"
-              label="Subject"
-              placeholder="What is this about?"
+              label={t('contact.form.subject')}
+              placeholder={t('contact.form.subjectPlaceholder')}
               value={formData.subject}
               onChange={handleChange}
               error={errors.subject}
@@ -167,8 +169,8 @@ const Contact = () => {
             
             <Textarea
               id="message"
-              label="Message"
-              placeholder="Your message here..."
+              label={t('contact.form.message')}
+              placeholder={t('contact.form.messagePlaceholder')}
               value={formData.message}
               onChange={handleChange}
               error={errors.message}
@@ -177,7 +179,7 @@ const Contact = () => {
             />
             
             <Button type="submit" variant="primary" size="lg" fullWidth disabled={isLoading}>
-              {isLoading ? 'Sending...' : 'Send Message'}
+              {isLoading ? t('contact.form.sending') : t('contact.form.send')}
             </Button>
           </form>
           
@@ -186,21 +188,21 @@ const Contact = () => {
               <div className="flex justify-center">
                 <div className="text-3xl mb-2 text-primary-600"><FaEnvelope /></div>
               </div>
-              <h4 className="font-semibold text-gray-900 mb-1">Email</h4>
+              <h4 className="font-semibold text-gray-900 mb-1">{t('contact.contact_info.email')}</h4>
               <p className="text-gray-600">mateosacco99@gmail.com</p>
             </div>
             <div>
               <div className="flex justify-center">
                 <div className="text-3xl mb-2 text-primary-600"><FaPhone /></div>
               </div>
-              <h4 className="font-semibold text-gray-900 mb-1">Phone</h4>
+              <h4 className="font-semibold text-gray-900 mb-1">{t('contact.contact_info.phone')}</h4>
               <p className="text-gray-600">+54 11 6855-5892</p>
             </div>
             <div>
               <div className="flex justify-center">
                 <div className="text-3xl mb-2 text-primary-600"><FaMapPin /></div>
               </div>
-              <h4 className="font-semibold text-gray-900 mb-1">Location</h4>
+              <h4 className="font-semibold text-gray-900 mb-1">{t('contact.contact_info.location')}</h4>
               <p className="text-gray-600">Buenos Aires, Argentina</p>
             </div>
           </div>
