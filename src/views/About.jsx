@@ -1,9 +1,6 @@
 import React from 'react';
 import { Card } from '../components';
 
-/**
- * About Section Component
- */
 const About = () => {
   return (
     <section id="about" className="py-20 bg-white">
@@ -20,22 +17,18 @@ const About = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
           <div className="space-y-6">
             <p className="text-gray-700 leading-relaxed">
-              I'm a full-stack developer with a passion for creating elegant solutions
-              to complex problems. With years of experience in web development, I've
-              worked on various projects ranging from small business websites to large-scale
-              enterprise applications.
-            </p>
-            <p className="text-gray-700 leading-relaxed">
-              My expertise includes modern JavaScript frameworks, responsive design,
-              and building scalable applications. I'm always eager to learn new technologies
-              and stay up-to-date with industry best practices.
+              Full Stack Developer with hands-on experience building mobile-first web applications with React and developing,
+              supporting, and maintaining Java systems. Experienced in e-commerce operations and process automation
+              using Microsoft Power Platform. Skilled with relational databases (Oracle, MySQL, SQLite) and NoSQL databases
+              (MongoDB), as well as Google Firebase/Firestore. Knowledge of Python for backend scripting and APIs. Currently
+              pursuing a degree in Systems Analysis at Instituto ORT.
             </p>
           </div>
           
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <Card hoverable>
               <div className="text-center">
-                <div className="text-4xl font-bold text-primary-600 mb-2">5+</div>
+                <div className="text-4xl font-bold text-primary-600 mb-2">1+</div>
                 <div className="text-gray-600">Years Experience</div>
               </div>
             </Card>

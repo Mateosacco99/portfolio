@@ -6,10 +6,10 @@ const Projects = () => {
     {
       title: 'Rent Insurance Calculator',
       description:
-        'A responsive web application that calculates rent insurance costs in real time, allowing users to preview coverage and pricing instantly.',
+        'A responsive web application that calculates rent insurance.',
       technologies: ['React', 'Vite', 'SASS'],
       image: '/cotizador-gestion.png',
-      link: 'https://mateosacco99.github.io/cotizador-gestion/',
+      link: 'https://cotizador-gestion.vercel.app/',
     },
     {
       title: 'Portfolio Website',
@@ -20,36 +20,12 @@ const Projects = () => {
       link: 'https://mateosacco99.github.io/cotizador-gestion/',
     },
     {
-      title: 'Rent Insurance Calculator',
+      title: 'AutoEquipe E-commerce',
       description:
-        'A responsive web application that calculates rent insurance costs in real time, allowing users to preview coverage and pricing instantly.',
-      technologies: ['React', 'Vite', 'SASS'],
-      image: '/cotizador-gestion.png',
-      link: 'https://mateosacco99.github.io/cotizador-gestion/',
-    },
-    {
-      title: 'Rent Insurance Calculator',
-      description:
-        'A responsive web application that calculates rent insurance costs in real time, allowing users to preview coverage and pricing instantly.',
-      technologies: ['React', 'Vite', 'SASS'],
-      image: '/cotizador-gestion.png',
-      link: 'https://mateosacco99.github.io/cotizador-gestion/',
-    },
-    {
-      title: 'Rent Insurance Calculator',
-      description:
-        'A responsive web application that calculates rent insurance costs in real time, allowing users to preview coverage and pricing instantly.',
-      technologies: ['React', 'Vite', 'SASS'],
-      image: '/cotizador-gestion.png',
-      link: 'https://mateosacco99.github.io/cotizador-gestion/',
-    },
-    {
-      title: 'Rent Insurance Calculator',
-      description:
-        'A responsive web application that calculates rent insurance costs in real time, allowing users to preview coverage and pricing instantly.',
-      technologies: ['React', 'Vite', 'SASS'],
-      image: '/cotizador-gestion.png',
-      link: 'https://mateosacco99.github.io/cotizador-gestion/',
+        'A web application that allows the user to place an order for automotive parts and accessories.',
+      technologies: ['React', 'Vite', 'SASS', 'Firebase'],
+      image: '/ecommerce-autoequipe.png',
+      link: 'https://cotizador-gestion.vercel.app/',
     },
   ];
 

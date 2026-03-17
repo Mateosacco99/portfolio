@@ -1,10 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Input, Textarea, Button } from '../components';
 import { FaPhone, FaEnvelope, FaMapPin } from 'react-icons/fa';
+import emailjs from 'emailjs-com';
 
-/**
- * Contact Section Component
- */
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -14,7 +12,12 @@ const Contact = () => {
   });
   
   const [errors, setErrors] = useState({});
-  const [submitStatus, setSubmitStatus] = useState(null); // 'success' | 'error' | null
+  const [submitStatus, setSubmitStatus] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
+  
+  useEffect(() => {
+    emailjs.init(process.env.REACT_APP_EMAILJS_PUBLIC_KEY);
+  }, []);
   
   const handleChange = (e) => {
     const { id, value } = e.target;
@@ -22,7 +25,6 @@ const Contact = () => {
       ...prev,
       [id]: value,
     }));
-    // Clear error when user starts typing
     if (errors[id]) {
       setErrors((prev) => ({
         ...prev,
@@ -65,20 +67,44 @@ const Contact = () => {
       return;
     }
     
-    // Handle form submission (e.g., send to backend)
-    // For now, just show success message
-    setSubmitStatus('success');
+    setIsLoading(true);
     
-    // Reset form after 2 seconds
-    setTimeout(() => {
-      setFormData({
-        name: '',
-        email: '',
-        subject: '',
-        message: '',
+    const templateParams = {
+      to_name: 'Mateo',
+      from_name: formData.name,
+      from_email: formData.email,
+      subject: formData.subject,
+      message: formData.message,
+    };
+    
+    emailjs
+      .send(
+        process.env.REACT_APP_EMAILJS_SERVICE_ID || 'YOUR_SERVICE_ID',
+        process.env.REACT_APP_EMAILJS_TEMPLATE_ID || 'YOUR_TEMPLATE_ID',
+        templateParams
+      )
+      .then(() => {
+        setSubmitStatus('success');
+        setFormData({
+          name: '',
+          email: '',
+          subject: '',
+          message: '',
+        });
+        setTimeout(() => {
+          setSubmitStatus(null);
+        }, 3000);
+      })
+      .catch((error) => {
+        console.error('EmailJS error:', error);
+        setSubmitStatus('error');
+        setTimeout(() => {
+          setSubmitStatus(null);
+        }, 3000);
+      })
+      .finally(() => {
+        setIsLoading(false);
       });
-      setSubmitStatus(null);
-    }, 2000);
   };
   
   return (
@@ -100,12 +126,18 @@ const Contact = () => {
             </div>
           )}
           
+          {submitStatus === 'error' && (
+            <div className="mb-6 p-4 bg-red-100 border border-red-400 text-red-700 rounded-lg">
+              Failed to send message. Please try again later.
+            </div>
+          )}
+          
           <form onSubmit={handleSubmit} className="space-y-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <Input
                 id="name"
                 label="Name"
-                placeholder="Mateo Sacco"
+                placeholder="Your Name"
                 value={formData.name}
                 onChange={handleChange}
                 error={errors.name}
@@ -144,8 +176,8 @@ const Contact = () => {
               required
             />
             
-            <Button type="submit" variant="primary" size="lg" fullWidth>
-              Send Message
+            <Button type="submit" variant="primary" size="lg" fullWidth disabled={isLoading}>
+              {isLoading ? 'Sending...' : 'Send Message'}
             </Button>
           </form>
           
