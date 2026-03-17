@@ -9,7 +9,7 @@ export const translations = {
     },
     hero: {
       greeting: "Hi, I'm",
-      specialization: 'I specialize in building modern, responsive, and user-friendly applications using the latest technologies.',
+      specialization: 'I specialize in building modern, responsive, and user-friendly applications using React JS.',
       techStack: "Technologies & Tools",
       buttons: {
         getInTouch: 'Get In Touch',
@@ -67,7 +67,7 @@ export const translations = {
     },
     hero: {
       greeting: 'Hola, soy',
-      specialization: 'Me especializo en construir aplicaciones modernas, responsivas y amigables con el usuario utilizando las últimas tecnologías.',
+      specialization: 'Me especializo en construir aplicaciones modernas, responsivas y amigables con el usuario utilizando React JS.',
       techStack: 'Tecnologías y Herramientas',
       buttons: {
         getInTouch: 'Contáctame',
