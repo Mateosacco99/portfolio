@@ -18,7 +18,7 @@ const Contact = () => {
   const [isLoading, setIsLoading] = useState(false);
   
   useEffect(() => {
-    emailjs.init(process.env.REACT_APP_EMAILJS_PUBLIC_KEY);
+    emailjs.init(process.env.EMAILJS_PUBLIC_KEY);
   }, []);
   
   const handleChange = (e) => {
@@ -81,8 +81,8 @@ const Contact = () => {
     
     emailjs
       .send(
-        process.env.REACT_APP_EMAILJS_SERVICE_ID || 'YOUR_SERVICE_ID',
-        process.env.REACT_APP_EMAILJS_TEMPLATE_ID || 'YOUR_TEMPLATE_ID',
+        process.env.EMAILJS_SERVICE_ID,
+        process.env.EMAILJS_TEMPLATE_ID,
         templateParams
       )
       .then(() => {
