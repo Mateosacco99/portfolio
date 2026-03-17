@@ -12,12 +12,17 @@ const Hero = () => {
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 mb-6">
             Hi, I'm <span className="text-primary-600">Mateo</span>
           </h1>
-          <p className="text-xl sm:text-2xl text-gray-700 mb-8 max-w-3xl mx-auto">
-            A passionate developer creating amazing web experiences
-          </p>
+          <div className="mb-8 flex justify-center items-center">
+            <img 
+              src="/Mateo.jpeg" 
+              alt="Mateo" 
+              className="w-48 h-48 sm:w-56 sm:h-56 rounded-full object-cover border-4 border-primary-600 shadow-lg"
+              style={{ objectPosition: 'center 1%' }}
+            />
+          </div>
           <p className="text-base sm:text-lg text-gray-600 mb-12 max-w-2xl mx-auto">
             I specialize in building modern, responsive, and user-friendly applications
-            using the latest technologies.
+            using React JS.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button variant="primary" size="lg" onClick={() => {
