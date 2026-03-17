@@ -1,0 +1,92 @@
+export const translations = {
+  en: {
+    navbar: {
+      home: 'Home',
+      about: 'About',
+      projects: 'Projects',
+      technologies: 'Technologies',
+      contact: 'Contact',
+    },
+    hero: {
+      greeting: "Hi, I'm",
+      specialization: 'I specialize in building modern, responsive, and user-friendly applications using the latest technologies.',
+      buttons: {
+        getInTouch: 'Get In Touch',
+        viewWork: 'View My Work',
+      },
+    },
+    about: {
+      title: 'About Me',
+      subtitle: 'Learn more about my background and expertise',
+      description: 'Full Stack Developer with hands-on experience building mobile-first web applications with React and developing, supporting, and maintaining Java systems. Experienced in e-commerce operations and process automation using Microsoft Power Platform. Skilled with relational databases (Oracle, MySQL, SQLite) and NoSQL databases (MongoDB), as well as Google Firebase/Firestore. Knowledge of Python for backend scripting and APIs. Currently pursuing a degree in Systems Analysis at Instituto ORT.',
+      experience: 'Years Experience',
+      technologies: 'Technologies',
+    },
+    contact: {
+      title: 'Get In Touch',
+      subtitle: 'Have a question or want to work together? Feel free to reach out!',
+      form: {
+        name: 'Name',
+        email: 'Email',
+        subject: 'Subject',
+        message: 'Message',
+        send: 'Send Message',
+        sending: 'Sending...',
+      },
+      status: {
+        success: 'Thank you for your message! I will get back to you soon.',
+        error: 'Failed to send message. Please try again later.',
+      },
+      contact_info: {
+        email: 'Email',
+        phone: 'Phone',
+        location: 'Location',
+      },
+    },
+  },
+  es: {
+    navbar: {
+      home: 'Inicio',
+      about: 'Sobre Mí',
+      projects: 'Proyectos',
+      technologies: 'Tecnologías',
+      contact: 'Contacto',
+    },
+    hero: {
+      greeting: 'Hola, soy',
+      specialization: 'Me especializo en construir aplicaciones modernas, responsivas y amigables con el usuario utilizando las últimas tecnologías.',
+      buttons: {
+        getInTouch: 'Contáctame',
+        viewWork: 'Mis Proyectos',
+      },
+    },
+    about: {
+      title: 'Sobre Mí',
+      subtitle: 'Experiencia y Conocimientos',
+      description: 'Desarrollador Full Stack con experiencia práctica en la construcción de aplicaciones web mobile-first con React y desarrollo, mantenimiento de sistemas Java. Con experiencia en operaciones de e-commerce y automatización de procesos utilizando Microsoft Power Platform. Hábil con bases de datos relacionales (Oracle, MySQL, SQLite) y bases de datos NoSQL (MongoDB), así como Google Firebase/Firestore. Conocimiento de Python para scripting backend y APIs. Actualmente estudiando una licenciatura en Análisis de Sistemas en Instituto ORT.',
+      experience: 'Años de Experiencia',
+      technologies: 'Tecnologías',
+    },
+    contact: {
+      title: 'Contáctame',
+      subtitle: '¿Tienes una pregunta o quieres trabajar juntos? ¡No dudes en comunicarte!',
+      form: {
+        name: 'Nombre',
+        email: 'Correo Electrónico',
+        subject: 'Asunto',
+        message: 'Mensaje',
+        send: 'Enviar Mensaje',
+        sending: 'Enviando...',
+      },
+      status: {
+        success: '¡Gracias por tu mensaje! Me pondré en contacto pronto.',
+        error: 'Error al enviar el mensaje. Por favor, intenta más tarde.',
+      },
+      contact_info: {
+        email: 'Correo Electrónico',
+        phone: 'Teléfono',
+        location: 'Ubicación',
+      },
+    },
+  },
+};

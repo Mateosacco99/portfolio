@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useLanguage } from '../i18n/LanguageContext';
 
 /**
  * Generic Navbar Component
@@ -16,6 +17,7 @@ const Navbar = ({
   ...props
 }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { language, toggleLanguage } = useLanguage();
   
   return (
     <nav className={`bg-white shadow-md sticky top-0 z-40 ${className}`} {...props}>
@@ -44,11 +46,24 @@ const Navbar = ({
                 {link.label}
               </a>
             ))}
+            <button
+              onClick={toggleLanguage}
+              className="px-3 py-1 text-sm font-semibold text-gray-700 hover:text-primary-600 border border-gray-300 rounded-lg transition-colors"
+            >
+              {language.toUpperCase()}
+            </button>
             {actions && <div className="ml-4">{actions}</div>}
           </div>
           
-          {/* Mobile Menu Button */}
-          <div className="md:hidden">
+          <div className="md:hidden flex items-center gap-4">
+            <button
+              onClick={toggleLanguage}
+              className="px-3 py-1 text-sm font-semibold text-gray-700 hover:text-primary-600 border border-gray-300 rounded-lg transition-colors"
+            >
+              {language.toUpperCase()}
+            </button>
+            
+            {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="text-gray-700 hover:text-primary-600 focus:outline-none"

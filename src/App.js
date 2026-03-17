@@ -1,14 +1,18 @@
 import React from 'react';
 import { Navbar, Footer } from './components';
 import { Hero, About, Projects, Technologies, Contact } from './views';
+import { LanguageProvider } from './i18n/LanguageContext';
+import { useLanguage } from './i18n/LanguageContext';
 
-function App() {
+function AppContent() {
+  const { t } = useLanguage();
+  
   const navLinks = [
-    { label: 'Home', href: '#home' },
-    { label: 'About', href: '#about' },
-    { label: 'Projects', href: '#projects' },
-    { label: 'Technologies', href: '#technologies' },
-    { label: 'Contact', href: '#contact' },
+    { label: t('navbar.home'), href: '#home' },
+    { label: t('navbar.about'), href: '#about' },
+    { label: t('navbar.projects'), href: '#projects' },
+    { label: t('navbar.technologies'), href: '#technologies' },
+    { label: t('navbar.contact'), href: '#contact' },
   ];
   
   const footerLinks = [
@@ -36,7 +40,7 @@ function App() {
       ),
     },
   ];
-  
+
   return (
     <div className="App min-h-screen bg-white">
       <Navbar logo="Portfolio" links={navLinks} />
@@ -57,6 +61,14 @@ function App() {
         socialLinks={socialLinks}
       />
     </div>
+  );
+}
+
+function App() {
+  return (
+    <LanguageProvider>
+      <AppContent />
+    </LanguageProvider>
   );
 }
 
