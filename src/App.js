@@ -11,8 +11,8 @@ function App() {
   ];
   
   const footerLinks = [
-    { label: 'Privacy Policy', href: '#privacy' },
-    { label: 'Terms of Service', href: '#terms' },
+    { label: '', href: '#privacy' },
+    { label: '', href: '#terms' },
   ];
   
   const socialLinks = [
