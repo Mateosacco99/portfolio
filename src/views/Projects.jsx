@@ -4,6 +4,14 @@ import { Card, Button } from '../components';
 const Projects = () => {
   const projects = [
     {
+      title: 'AutoEquipe E-commerce',
+      description:
+        'A web application that allows the user to place an order for automotive parts and accessories.',
+      technologies: ['React', 'Vite', 'SASS', 'Firebase'],
+      image: '/ecommerce-autoequipe.png',
+      link: 'https://ecommerce-autoequipe.vercel.app/',
+    },
+    {
       title: 'Rent Insurance Calculator',
       description:
         'A responsive web application that calculates rent insurance.',
@@ -18,14 +26,6 @@ const Projects = () => {
       technologies: ['React', 'Tailwind'],
       image: '/portfolio.png',
       link: 'https://mateosacco99.github.io/cotizador-gestion/',
-    },
-    {
-      title: 'AutoEquipe E-commerce',
-      description:
-        'A web application that allows the user to place an order for automotive parts and accessories.',
-      technologies: ['React', 'Vite', 'SASS', 'Firebase'],
-      image: '/ecommerce-autoequipe.png',
-      link: 'https://ecommerce-autoequipe.vercel.app/',
     },
   ];
 
