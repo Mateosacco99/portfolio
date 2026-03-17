@@ -1,16 +1,19 @@
 import React from 'react';
 import { Button } from '../components';
+import { useLanguage } from '../i18n/LanguageContext';
 
 /**
  * Hero Section Component
  */
 const Hero = () => {
+  const { t } = useLanguage();
+
   return (
     <section className="bg-gradient-to-br from-primary-50 to-primary-100 py-20 sm:py-32">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 mb-6">
-            Hi, I'm <span className="text-primary-600">Mateo</span>
+            {t('hero.greeting')} <span className="text-primary-600">Mateo</span>
           </h1>
           <div className="mb-8 flex justify-center items-center">
             <img 
@@ -21,19 +24,18 @@ const Hero = () => {
             />
           </div>
           <p className="text-base sm:text-lg text-gray-600 mb-12 max-w-2xl mx-auto">
-            I specialize in building modern, responsive, and user-friendly applications
-            using React JS.
+            {t('hero.specialization')}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button variant="primary" size="lg" onClick={() => {
               document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
             }}>
-              Get In Touch
+              {t('hero.buttons.getInTouch')}
             </Button>
             <Button variant="outline" size="lg" onClick={() => {
               document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' });
             }}>
-              View My Work
+              {t('hero.buttons.viewWork')}
             </Button>
           </div>
         </div>
