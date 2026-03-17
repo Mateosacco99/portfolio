@@ -25,7 +25,7 @@ const Projects = () => {
         'A modern portfolio website showcasing projects, skills, and professional experience.',
       technologies: ['React', 'Tailwind'],
       image: '/portfolio.png',
-      link: 'https://mateosacco99.github.io/cotizador-gestion/',
+      link: 'https://mateo-sacco.vercel.app/',
     },
   ];
 
