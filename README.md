@@ -2,8 +2,6 @@
 
 A modern, responsive portfolio website built with React and Tailwind CSS featuring reusable components and a clean design.
 
-![Portfolio Desktop View](https://github.com/user-attachments/assets/ee4da572-98a9-41ff-a9cd-55364c28cb5a)
-
 ## Technologies Used
 
 - **React** - Frontend framework
