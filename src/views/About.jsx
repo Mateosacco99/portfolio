@@ -27,7 +27,7 @@ const About = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <Card hoverable>
               <div className="text-center">
-                <div className="text-4xl font-bold text-primary-600 mb-2">1+</div>
+                <div className="text-4xl font-bold text-primary-600 mb-2">2+</div>
                 <div className="text-gray-600">{t('about.experience')}</div>
               </div>
             </Card>
