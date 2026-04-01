@@ -16,7 +16,7 @@ const Projects = () => {
       description: t('projects.calcDesc'),
       technologies: ['React', 'Vite', 'SASS'],
       image: '/cotizador-gestion.png',
-      link: 'https://cotizador-gestion.vercel.app/',
+      link: 'https://cotizador-msseguros.vercel.app/',
     },
     {
       title: 'Portfolio Website',
