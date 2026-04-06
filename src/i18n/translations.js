@@ -29,6 +29,7 @@ export const translations = {
       aeDesc: 'A web application that allows the user to place an order for automotive parts and accessories.',
       calcDesc: 'A responsive web application that calculates rent insurance.',
       portfolioDesc: 'A modern portfolio website showcasing projects, skills, and professional experience.',
+      portfolioLfDesc: 'A portfolio website for an artist, featuring a music player.',
       liveDemo: 'View Live Demo',
     },
     contact: {
@@ -87,6 +88,7 @@ export const translations = {
       aeDesc: 'Una aplicación web que permite realizar un pedido de neumáticos para vehículos.',
       calcDesc: 'Una aplicación web responsive que calcula seguros de caución.',
       portfolioDesc: 'Portafolio que destaca proyectos, habilidades y experiencia profesional.',
+      portfolioLfDesc: 'Portafolio para un artista, con reproductor de música.',
       liveDemo: 'Ver Demo',
     },
     contact: {

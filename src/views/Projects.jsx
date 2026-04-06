@@ -5,11 +5,18 @@ const Projects = () => {
   const { t } = useLanguage();
   const projects = [
     {
-      title: 'AutoEquipe E-commerce',
+      title: 'AutoEquipe E-commerce (demo)',
       description: t('projects.aeDesc'),
       technologies: ['React', 'Vite', 'SASS', 'Firebase'],
       image: '/ecommerce-autoequipe.png',
       link: 'https://ecommerce-autoequipe.vercel.app/',
+    },
+    {
+      title: 'Artist Portfolio (WIP)',
+      description: t('projects.portfolioLfDesc'),
+      technologies: ['React', 'SASS', 'Firebase'],
+      image: '/portfolio-pibo.jpg',
+      link: 'https://lucas-fernandez.vercel.app/',
     },
     {
       title: 'Rent Insurance Calculator',
