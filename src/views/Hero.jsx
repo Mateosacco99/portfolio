@@ -6,7 +6,20 @@ import { useLanguage } from '../i18n/LanguageContext';
  * Hero Section Component
  */
 const Hero = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
+
+  const handleDownloadCV = () => {
+    const fileName = language === 'en' 
+      ? 'Mateo_Sacco_EN.pdf' 
+      : 'Mateo_Sacco_ES.pdf';
+    
+    const link = document.createElement('a');
+    link.href = `/${fileName}`;
+    link.download = fileName;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
 
   return (
     <section className="bg-gradient-to-br from-primary-50 to-primary-100 py-20 sm:py-32">
@@ -36,6 +49,9 @@ const Hero = () => {
               document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' });
             }}>
               {t('hero.buttons.viewWork')}
+            </Button>
+            <Button variant="outline" size="lg" onClick={handleDownloadCV}>
+              {t('hero.buttons.downloadCV')}
             </Button>
           </div>
         </div>

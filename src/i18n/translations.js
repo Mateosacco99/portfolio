@@ -14,6 +14,7 @@ export const translations = {
       buttons: {
         getInTouch: 'Get In Touch',
         viewWork: 'View My Work',
+        downloadCV: 'Download My CV',
       },
     },
     about: {
@@ -73,6 +74,7 @@ export const translations = {
       buttons: {
         getInTouch: 'Contáctame',
         viewWork: 'Mis Proyectos',
+        downloadCV: 'Descargar Mi CV',
       },
     },
     about: {
