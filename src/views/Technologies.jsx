@@ -27,6 +27,22 @@ const iconMap = {
   SiVercel,
 };
 
+const colorHexMap = {
+  'text-yellow-400': '#facc15',
+  'text-blue-400': '#60a5fa',
+  'text-blue-500': '#3b82f6',
+  'text-red-600': '#dc2626',
+  'text-pink-500': '#ec4899',
+  'text-green-500': '#22c55e',
+  'text-red-500': '#ef4444',
+  'text-blue-600': '#2563eb',
+  'text-black': '#000000',
+  'text-orange-600': '#ea580c',
+  'text-orange-500': '#f97316',
+  'text-green-600': '#16a34a',
+  'text-cyan-400': '#22d3ee',
+};
+
 const Technologies = () => {
   const { t } = useLanguage();
   const [technologies, setTechnologies] = useState([]);
@@ -70,10 +86,14 @@ const Technologies = () => {
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-8 max-w-4xl mx-auto">
             {technologies.map((tech, index) => {
               const IconComponent = iconMap[tech.icon];
+              const hexColor = colorHexMap[tech.color] || '#6b7280';
               return (
                 <div key={index} className="flex flex-col items-center justify-center">
                   {IconComponent ? (
-                    <div className={`${tech.color} mb-4 transition-transform duration-300 hover:scale-110`}>
+                    <div
+                      className="mb-4 transition-transform duration-300 hover:scale-110"
+                      style={{ color: hexColor }}
+                    >
                       <IconComponent size={64} />
                     </div>
                   ) : (
