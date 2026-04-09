@@ -45,7 +45,7 @@ function AppContent() {
     <div className="App min-h-screen bg-white">
       <Navbar logo="Portfolio" links={navLinks} />
       
-      <main>
+      <main className="pt-16">
         <div id="home">
           <Hero />
         </div>
