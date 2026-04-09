@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
+import ReCAPTCHA from 'react-google-recaptcha';
 import { Input, Textarea, Button } from '../components';
 import { FaPhone, FaEnvelope, FaMapPin } from 'react-icons/fa';
 import emailjs from 'emailjs-com';
@@ -16,6 +17,8 @@ const Contact = () => {
   const [errors, setErrors] = useState({});
   const [submitStatus, setSubmitStatus] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
+  const [recaptchaToken, setRecaptchaToken] = useState(null);
+  const recaptchaRef = useRef();
   
   useEffect(() => {
     emailjs.init(process.env.REACT_APP_EMAILJS_PUBLIC_KEY);
@@ -54,6 +57,10 @@ const Contact = () => {
     
     if (!formData.message.trim()) {
       newErrors.message = 'Message is required';
+    }
+    
+    if (!recaptchaToken) {
+      newErrors.recaptcha = 'Please verify that you are not a robot';
     }
     
     return newErrors;
@@ -106,6 +113,8 @@ const Contact = () => {
       })
       .finally(() => {
         setIsLoading(false);
+        recaptchaRef.current.reset();
+        setRecaptchaToken(null);
       });
   };
   
@@ -178,7 +187,19 @@ const Contact = () => {
               required
             />
             
-            <Button type="submit" variant="primary" size="lg" fullWidth disabled={isLoading}>
+            <div className="flex justify-center my-6">
+              <ReCAPTCHA
+                ref={recaptchaRef}
+                sitekey="6LdDnK8sAAAAAJCdcl_HxQEludhEWfoMnjaSbEAu"
+                onChange={(token) => setRecaptchaToken(token)}
+              />
+            </div>
+            
+            {errors.recaptcha && (
+              <p className="text-red-600 text-sm">{errors.recaptcha}</p>
+            )}
+            
+            <Button type="submit" variant="primary" size="lg" fullWidth disabled={isLoading || !recaptchaToken}>
               {isLoading ? t('contact.form.sending') : t('contact.form.send')}
             </Button>
           </form>
