@@ -1,38 +1,31 @@
+import { useState, useEffect } from 'react';
 import { Card, Button } from '../components';
 import { useLanguage } from '../i18n/LanguageContext';
+import { db } from '../service/firebase';
+import { collection, getDocs } from 'firebase/firestore';
 
 const Projects = () => {
   const { t } = useLanguage();
-  const projects = [
-    {
-      title: 'AutoEquipe E-commerce (demo)',
-      description: t('projects.aeDesc'),
-      technologies: ['React', 'Vite', 'SASS', 'Firebase'],
-      image: '/ecommerce-autoequipe.png',
-      link: 'https://ecommerce-autoequipe.vercel.app/',
-    },
-    {
-      title: 'Artist Portfolio (WIP)',
-      description: t('projects.portfolioLfDesc'),
-      technologies: ['React', 'SASS', 'Firebase'],
-      image: '/portfolio-pibo.jpg',
-      link: 'https://lucas-fernandez.vercel.app/',
-    },
-    {
-      title: 'Rent Insurance Calculator',
-      description: t('projects.calcDesc'),
-      technologies: ['React', 'Vite', 'SASS'],
-      image: '/cotizador-gestion.png',
-      link: 'https://cotizador-msseguros.vercel.app/',
-    },
-    {
-      title: 'Portfolio Website',
-      description: t('projects.portfolioDesc'),
-      technologies: ['React', 'Tailwind'],
-      image: '/portfolio.png',
-      link: 'https://mateo-sacco.vercel.app/',
-    },
-  ];
+  const [projects, setProjects] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchProjects = async () => {
+      try {
+        const querySnapshot = await getDocs(collection(db, 'Projects'));
+        const fetchedProjects = querySnapshot.docs.map(doc => doc.data());
+        console.log('Fetched projects:', fetchedProjects);
+        setProjects(fetchedProjects);
+      } catch (error) {
+        console.error('Error fetching projects:', error);
+        setProjects([]);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchProjects();
+  }, []);
 
   const openProject = (link) => {
     if (link && link !== '#') {
@@ -55,13 +48,22 @@ const Projects = () => {
 
         {/* Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project, index) => (
-            <Card
-              key={index}
-              hoverable
-              className="flex flex-col h-full cursor-pointer"
-              onClick={() => openProject(project.link)}
-            >
+          {loading ? (
+            <p className="col-span-full text-center text-gray-600">
+              {t('projects.loading') || 'Loading projects...'}
+            </p>
+          ) : projects.length === 0 ? (
+            <p className="col-span-full text-center text-gray-600">
+              {t('projects.noProjects') || 'No projects found'}
+            </p>
+          ) : (
+            projects.map((project, index) => (
+              <Card
+                key={index}
+                hoverable
+                className="flex flex-col h-full cursor-pointer"
+                onClick={() => openProject(project.link)}
+              >
               {/* Image / Preview */}
               <div className="relative mb-4 group">
                 {project.image && project.image.startsWith('/') ? (
@@ -98,7 +100,7 @@ const Projects = () => {
               </h3>
 
               <p className="text-gray-600 mb-4 flex-grow">
-                {project.description}
+                {project.description.includes('.') ? t(project.description) : project.description}
               </p>
 
               {/* Tech stack */}
@@ -126,7 +128,8 @@ const Projects = () => {
                 {t('projects.liveDemo')}
               </Button>
             </Card>
-          ))}
+            ))
+          )}
         </div>
       </div>
     </section>
