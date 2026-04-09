@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Card, Button } from '../components';
+import { Card, Button, Spinner } from '../components';
 import { useLanguage } from '../i18n/LanguageContext';
 import { db } from '../service/firebase';
 import { collection, getDocs } from 'firebase/firestore';
@@ -14,7 +14,6 @@ const Projects = () => {
       try {
         const querySnapshot = await getDocs(collection(db, 'Projects'));
         const fetchedProjects = querySnapshot.docs.map(doc => doc.data());
-        console.log('Fetched projects:', fetchedProjects);
         setProjects(fetchedProjects);
       } catch (error) {
         console.error('Error fetching projects:', error);
@@ -49,9 +48,9 @@ const Projects = () => {
         {/* Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {loading ? (
-            <p className="col-span-full text-center text-gray-600">
-              {t('projects.loading') || 'Loading projects...'}
-            </p>
+            <div className="col-span-full flex justify-center py-12">
+              <Spinner size="lg" />
+            </div>
           ) : projects.length === 0 ? (
             <p className="col-span-full text-center text-gray-600">
               {t('projects.noProjects') || 'No projects found'}

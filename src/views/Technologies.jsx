@@ -7,6 +7,7 @@ import { SiPostman, SiVite, SiVercel } from 'react-icons/si';
 import { useLanguage } from '../i18n/LanguageContext';
 import { db } from '../service/firebase';
 import { collection, getDocs } from 'firebase/firestore';
+import { Spinner } from '../components';
 
 const iconMap = {
   SiJavascript,
@@ -36,7 +37,6 @@ const Technologies = () => {
       try {
         const querySnapshot = await getDocs(collection(db, 'Technologies'));
         const fetchedTechnologies = querySnapshot.docs.map(doc => doc.data());
-        console.log('Fetched technologies:', fetchedTechnologies);
         setTechnologies(fetchedTechnologies);
       } catch (error) {
         console.error('Error fetching technologies:', error);
@@ -59,9 +59,9 @@ const Technologies = () => {
         </div>
 
         {loading ? (
-          <p className="text-center text-gray-600">
-            {t('technologies.loading') || 'Loading technologies...'}
-          </p>
+          <div className="flex justify-center py-12">
+            <Spinner size="lg" />
+          </div>
         ) : technologies.length === 0 ? (
           <p className="text-center text-gray-600">
             {t('technologies.noTechnologies') || 'No technologies found'}
