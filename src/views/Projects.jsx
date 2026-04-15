@@ -65,7 +65,7 @@ const Projects = () => {
               >
               {/* Image / Preview */}
               <div className="relative mb-4 group">
-                {project.image && project.image.startsWith('/') ? (
+                {project.image ? (
                   <div className="overflow-hidden rounded-lg shadow-sm">
                     {/* Browser mockup */}
                     <div className="h-7 bg-gray-200 flex items-center px-3 gap-2">
